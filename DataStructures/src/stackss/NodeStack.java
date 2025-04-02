@@ -1,15 +1,15 @@
-package LinkedList;
-public class NodeLL<T> {
+package stackss;
+public class NodeStack<T> {
 
   private T data;
-  private NodeLL<T> next;
-  
-  public NodeLL(T data) {
+  private NodeStack<T> next;
+
+  public NodeStack(T data) {
     this.data = data;
     this.next = null;
   }
 
-  public NodeLL(T data, NodeLL<T> next) {
+  public NodeStack(T data, NodeStack<T> next) {
     this.data = data;
     this.next = next;
   }
@@ -22,17 +22,17 @@ public class NodeLL<T> {
     this.data = data;
   }
 
-  public NodeLL<T> getNext() {
+  public NodeStack<T> getNext() {
     return next;
   }
 
-  public void setNext(NodeLL<T> next) {
+  public void setNext(NodeStack<T> next) {
     this.next = next;
   }
 
   @Override
   public String toString() {
-    return "NodeLL [Head = " + data + ", Next = " + next + "]";
+    return "NodeStack [Data = " + data + ", Next = " + next + "]";
   }
 
 }

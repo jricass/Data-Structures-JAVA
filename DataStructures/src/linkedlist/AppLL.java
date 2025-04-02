@@ -1,4 +1,4 @@
-package LinkedList;
+package linkedlist;
 public class AppLL {
     public static void main(String[] args) throws Exception {
 

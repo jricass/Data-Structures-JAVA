@@ -1,4 +1,4 @@
-package Stack;
+package stackss;
 public class Stack<T> {
 
   private NodeStack<T> head;
