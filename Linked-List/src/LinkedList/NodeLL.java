@@ -1,14 +1,15 @@
-public class Node<T> {
+package LinkedList;
+public class NodeLL<T> {
 
   private T data;
-  private Node<T> next;
+  private NodeLL<T> next;
   
-  public Node(T data) {
+  public NodeLL(T data) {
     this.data = data;
     this.next = null;
   }
 
-  public Node(T data, Node<T> next) {
+  public NodeLL(T data, NodeLL<T> next) {
     this.data = data;
     this.next = next;
   }
@@ -21,17 +22,17 @@ public class Node<T> {
     this.data = data;
   }
 
-  public Node<T> getNext() {
+  public NodeLL<T> getNext() {
     return next;
   }
 
-  public void setNext(Node<T> next) {
+  public void setNext(NodeLL<T> next) {
     this.next = next;
   }
 
   @Override
   public String toString() {
-    return "Node [Head = " + data + ", Next = " + next + "]";
+    return "NodeLL [Head = " + data + ", Next = " + next + "]";
   }
 
 }
