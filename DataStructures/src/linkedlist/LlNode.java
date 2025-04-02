@@ -1,15 +1,16 @@
 package linkedlist;
-public class NodeLL<T> {
+
+public class LlNode<T> {
 
   private T data;
-  private NodeLL<T> next;
+  private LlNode<T> next;
   
-  public NodeLL(T data) {
+  public LlNode(T data) {
     this.data = data;
     this.next = null;
   }
 
-  public NodeLL(T data, NodeLL<T> next) {
+  public LlNode(T data, LlNode<T> next) {
     this.data = data;
     this.next = next;
   }
@@ -22,17 +23,17 @@ public class NodeLL<T> {
     this.data = data;
   }
 
-  public NodeLL<T> getNext() {
+  public LlNode<T> getNext() {
     return next;
   }
 
-  public void setNext(NodeLL<T> next) {
+  public void setNext(LlNode<T> next) {
     this.next = next;
   }
 
   @Override
   public String toString() {
-    return "NodeLL [Head = " + data + ", Next = " + next + "]";
+    return "LlNode [Head = " + data + ", Next = " + next + "]";
   }
 
 }

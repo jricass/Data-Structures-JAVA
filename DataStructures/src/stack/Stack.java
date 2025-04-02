@@ -1,7 +1,8 @@
-package stackss;
+package stack;
+
 public class Stack<T> {
 
-  private NodeStack<T> head;
+  private StackNode<T> head;
   private int size;
   private int currentSize;
   
@@ -20,23 +21,23 @@ public class Stack<T> {
   }
 
   public void push(T data) {
-    NodeStack<T> newNodeStack = new NodeStack<>(data);
+    StackNode<T> newStackNode = new StackNode<>(data);
 
     if (isEmpty()) {
-      this.head = newNodeStack;
+      this.head = newStackNode;
       this.currentSize++;
     } else if (this.size == this.currentSize) {
       System.out.println("Limite da pilha atingido");
     } else {
-      newNodeStack.setNext(head);
-      this.head = newNodeStack;
+      newStackNode.setNext(head);
+      this.head = newStackNode;
       this.currentSize++;
     }
   }
 
   public void pop() {
     if (isEmpty()) {
-      System.out.println("Pilha sem nenhum NodeStack :(");
+      System.out.println("Pilha sem nenhum StackNode :(");
     } else {
       this.head = head.getNext();
       this.currentSize--;
@@ -56,7 +57,7 @@ public class Stack<T> {
   }
 
   public void printStack() {
-    NodeStack<T> current = this.head;
+    StackNode<T> current = this.head;
     
     System.out.print("HEAD ---> [");
     while (current.getNext() != null) {

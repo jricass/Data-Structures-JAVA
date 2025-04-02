@@ -1,8 +1,9 @@
 package linkedlist;
+
 public class LinkedList<T> {
 
-  private NodeLL<T> head;
-  private NodeLL<T> tail;
+  private LlNode<T> head;
+  private LlNode<T> tail;
   private int size;
   private final int NAO_ENCONTRADO = -1;
   private final String LISTA_VAZIA = "Lista Vazia: []";
@@ -16,11 +17,11 @@ public class LinkedList<T> {
     return (this.head == null);
   }
 
-  private NodeLL<T> getNodeLL(int pos) {
+  private LlNode<T> getLlNode(int pos) {
     if (pos < 0 && pos > this.size) {
       throw new IllegalArgumentException(POSICAO_INVALIDA);
     }
-    NodeLL<T> current = this.head;
+    LlNode<T> current = this.head;
     for (int i = 0; i < pos; i++) {
       current = current.getNext();
     }
@@ -28,11 +29,11 @@ public class LinkedList<T> {
   }
 
   public T getByIndex(int pos) {
-    return this.getNodeLL(pos).getData();
+    return this.getLlNode(pos).getData();
   }
 
   public int getPosByData(T data) {
-    NodeLL<T> current = this.head;
+    LlNode<T> current = this.head;
     int pos = 0;
 
     while (current != null) {
@@ -49,10 +50,10 @@ public class LinkedList<T> {
     if (isEmpty()) {
       System.out.println(LISTA_VAZIA);
     } else {
-      NodeLL<T> current = this.head;
+      LlNode<T> current = this.head;
 
       while (current != null) {
-        NodeLL<T> next = current.getNext();
+        LlNode<T> next = current.getNext();
         current.setData(null);
         current.setNext(null);
         current = next;
@@ -62,23 +63,23 @@ public class LinkedList<T> {
   }
 
   public void addHead(T data) {
-    NodeLL<T> newNodeLL = new NodeLL<T>(data);
+    LlNode<T> newLlNode = new LlNode<T>(data);
     if (isEmpty()) {
-      this.head = newNodeLL;
+      this.head = newLlNode;
     } else {
-      newNodeLL.setNext(head);
-      this.head = newNodeLL;
+      newLlNode.setNext(head);
+      this.head = newLlNode;
     }
     this.size++;
   }
 
   public void addTail(T data) {
-    NodeLL<T> newNodeLL = new NodeLL<T>(data);
+    LlNode<T> newLlNode = new LlNode<T>(data);
     if (isEmpty()) {
-      this.head = newNodeLL;
+      this.head = newLlNode;
     } else {
-      this.tail.setNext(newNodeLL);
-      this.tail = newNodeLL;
+      this.tail.setNext(newLlNode);
+      this.tail = newLlNode;
     }
     this.size++;
   }
@@ -92,11 +93,11 @@ public class LinkedList<T> {
     } else if (pos == this.size) {
       this.addTail(data);
     } else {
-      NodeLL<T> prevNodeLL = this.getNodeLL(pos);
-      NodeLL<T> nextNodeLL = prevNodeLL.getNext();
-      NodeLL<T> newNodeLL = new NodeLL<T>(data);
-      newNodeLL.setNext(nextNodeLL);
-      prevNodeLL.setNext(newNodeLL);
+      LlNode<T> prevLlNode = this.getLlNode(pos);
+      LlNode<T> nextLlNode = prevLlNode.getNext();
+      LlNode<T> newLlNode = new LlNode<T>(data);
+      newLlNode.setNext(nextLlNode);
+      prevLlNode.setNext(newLlNode);
       this.size++;
     }
   }
@@ -120,7 +121,7 @@ public class LinkedList<T> {
     } else if (size == 1) {
       return this.removeHead();
     }
-    NodeLL<T> prevLast = this.getNodeLL(this.size - 2);
+    LlNode<T> prevLast = this.getLlNode(this.size - 2);
     T removed = prevLast.getNext().getData();
     prevLast.setNext(null);
     this.tail = prevLast;
@@ -141,10 +142,10 @@ public class LinkedList<T> {
     } else if (pos == this.size - 1) {
       return this.removeTail();
     } else {
-      NodeLL<T> prevNodeLL = this.getNodeLL(pos - 1);
-      NodeLL<T> current = prevNodeLL.getNext();
-      NodeLL<T> nexNodeLL = current.getNext();
-      prevNodeLL.setNext(nexNodeLL);
+      LlNode<T> prevLlNode = this.getLlNode(pos - 1);
+      LlNode<T> current = prevLlNode.getNext();
+      LlNode<T> nexLlNode = current.getNext();
+      prevLlNode.setNext(nexLlNode);
       current.setNext(null);
       size--;
 
@@ -153,7 +154,7 @@ public class LinkedList<T> {
   }
 
   public void printFromHead() {
-    NodeLL<T> current = this.head;
+    LlNode<T> current = this.head;
     if (isEmpty()) {
       System.out.println("[]");
     } else {

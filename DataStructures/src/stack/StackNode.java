@@ -1,15 +1,16 @@
-package stackss;
-public class NodeStack<T> {
+package stack;
+
+public class StackNode<T> {
 
   private T data;
-  private NodeStack<T> next;
+  private StackNode<T> next;
 
-  public NodeStack(T data) {
+  public StackNode(T data) {
     this.data = data;
     this.next = null;
   }
 
-  public NodeStack(T data, NodeStack<T> next) {
+  public StackNode(T data, StackNode<T> next) {
     this.data = data;
     this.next = next;
   }
@@ -22,17 +23,17 @@ public class NodeStack<T> {
     this.data = data;
   }
 
-  public NodeStack<T> getNext() {
+  public StackNode<T> getNext() {
     return next;
   }
 
-  public void setNext(NodeStack<T> next) {
+  public void setNext(StackNode<T> next) {
     this.next = next;
   }
 
   @Override
   public String toString() {
-    return "NodeStack [Data = " + data + ", Next = " + next + "]";
+    return "StackNode [Data = " + data + ", Next = " + next + "]";
   }
 
 }

@@ -7,6 +7,7 @@ This repository consists of building the most famous data structures from scratc
 📦 Java Data Structures Collection  
 ├── .vscode/  
 ├── lib/  
+├── bin/
 ├── src/  
 │   ├── linkedlist/  
 │   │   ├── AppLL.java  

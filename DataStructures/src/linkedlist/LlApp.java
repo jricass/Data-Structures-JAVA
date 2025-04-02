@@ -1,5 +1,6 @@
 package linkedlist;
-public class AppLL {
+
+public class LlApp {
     public static void main(String[] args) throws Exception {
 
         
