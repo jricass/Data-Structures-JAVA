@@ -5,16 +5,16 @@ This repository consists of building the most famous data structures from scratc
 
 ## Repository Structure
 📦 Java Data Structures Collection  
--+ .vscode/  
--+ lib/  
--+ bin/  
--+ src/  
-|      -+ linkedlist/  
-|      |    -+ AppLL.java  
-|      |    -+ NodeLL.java  
-|      |    -+ LinkedList.java  
-|      -+ stackss/  
-|      |    -+ AppStack.java  
-|      |    -+ NodeStack.java  
-|      |    -+ Stack.java  
--+ README.md  
+├── .vscode/  
+├── lib/  
+├── bin/
+├── src/  
+│   ├── linkedlist/  
+│   │   ├── AppLL.java  
+│   │   ├── NodeLL.java  
+│   │   ├── LinkedList.java  
+│   ├── stackss/  
+│   │   ├── AppStack.java  
+│   │   ├── NodeStack.java  
+│   │   ├── Stack.java  
+└── README.md  
