@@ -5,6 +5,7 @@ This repository consists of building the most famous data structures from scratc
 
 ## Repository Structure
 📦 Java Data Structures Collection  
+```
 ├── .vscode/  
 ├── lib/  
 ├── bin/
@@ -18,3 +19,4 @@ This repository consists of building the most famous data structures from scratc
 │   │   ├── NodeStack.java  
 │   │   ├── Stack.java  
 └── README.md  
+```
